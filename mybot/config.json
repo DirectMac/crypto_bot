@@ -1,0 +1,13 @@
+{
+    "CURRENCIES": 
+    [
+        "btc", 
+        "doge", 
+        "eth", 
+        "waxp",
+        "ltc"
+    ],
+    "PERIOD": "1min",
+    "SIZE": 300,
+    "INDEX": "close"
+}
