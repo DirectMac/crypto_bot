@@ -21,15 +21,11 @@ def check_period(symbol):
 
 def check_size(symbol):
     allowable_size = FormSize()
-    try:
-        if int(symbol) >= allowable_size.MAX:
-            return allowable_size.MAX
-
-        if int(symbol) <= allowable_size.MIN:
-            return allowable_size.MIN
-        return int(symbol)
-    except:
-        return 300
+    if int(symbol) >= allowable_size.MAX:
+        return allowable_size.MAX
+    if int(symbol) <= allowable_size.MIN:
+        return allowable_size.MIN
+    return int(symbol)
 
 
 def check_index(symbol):

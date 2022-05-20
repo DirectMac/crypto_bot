@@ -8,7 +8,6 @@ import time
 
 
 class Table(Brain):
-
     currency_array = []
 
     def __del__(self):
@@ -36,9 +35,10 @@ class Table(Brain):
         with Live(generate_table(), refresh_per_second=10) as live:
             while True:
                 try:
-                    currency = get_config(FormConfig.CURRENCIES)
-                    for i in currency:
-                        self.currency_array.append(super().result(i))
+                    currencies = get_config(FormConfig.CURRENCIES)
+                    for currency in currencies:
+                        self.currency_array.append(
+                            super().count_currency(currency))
                     live.update(generate_table())
                     self.currency_array.clear()
                     time.sleep(0.2)

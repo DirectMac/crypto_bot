@@ -7,6 +7,6 @@ def format_period():
     try:
         time_period = int(title_period[:2])
         return [time_period, title_period[2:]]
-    except:
+    except ValueError:
         time_period = int(title_period[0])
         return [time_period, title_period[1:]]

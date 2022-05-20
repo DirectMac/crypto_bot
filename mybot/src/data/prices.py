@@ -4,22 +4,17 @@ import sys
 
 
 class Prices:
+    prices_url = 'https://api.huobi.pro/market/history/kline?period={}&size={}&symbol={}usdt'
 
-    link_to_prices = 'https://api.huobi.pro/market/history/kline?period={}&size={}&symbol={}usdt'
-
-    def get_prices(self, currency, period, size, index):
-
-        get_prices = requests.get(
-            self.link_to_prices.format(period, size, currency)).json()
-
-        prices = []
-
+    def fetch_prices(self, currency, period, size, index):
+        result = []
+        fetched_prices = requests.get(
+            self.prices_url.format(period, size, currency)).json()
         try:
-            for i in get_prices['data']:
-                prices.append(i[index])
-
+            for item in fetched_prices['data']:
+                result.append(item[index])
         except KeyError:
             print("Error: Related to currency or config")
             sys.exit()
 
-        return prices
+        return result

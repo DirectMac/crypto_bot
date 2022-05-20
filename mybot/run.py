@@ -1,7 +1,4 @@
-try:
-    from .src.data.table.run_table import Table
-except:
-    from src.data.table.run_table import Table
+from .src.data.table.run_table import Table
 
 
 def run():

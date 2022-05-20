@@ -5,11 +5,11 @@ from .config import get_config
 
 class Brain(Prices):
 
-    def result(self, currency):
+    def count_currency(self, currency):
         period = get_config(FormConfig.PERIOD)
         size = get_config(FormConfig.SIZE)
         index = get_config(FormConfig.INDEX)
-        data = super().get_prices(currency, period, size, index)
+        data = super().fetch_prices(currency, period, size, index)
         current = data[0]
         high = max(data)
         low = min(data)
