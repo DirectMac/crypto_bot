@@ -6,8 +6,7 @@ import time
 
 def get_title():
     size = get_config(FormConfig.SIZE)
-    time_unit = format_period()[1]
-    amount = format_period()[0]
+    amount, time_unit = format_period()
 
     if time_unit == 'min':
         seconds = amount * size * 60
