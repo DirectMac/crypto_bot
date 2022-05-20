@@ -1,51 +1,53 @@
 from dataclasses import dataclass
+from typing import Final
 
 
 @dataclass
 class FormConfig:
-    CURRENCIES: str = 'CURRENCIES'
-    PERIOD: str = 'PERIOD'
-    SIZE: str = 'SIZE'
-    INDEX: str = 'INDEX'
+    CURRENCIES: Final = 'CURRENCIES'
+    PERIOD: Final = 'PERIOD'
+    SIZE: Final = 'SIZE'
+    INDEX: Final = 'INDEX'
     INVALID = None
 
 
 @dataclass
 class FormCurrencies:
-    BTC: str = 'btc'
-    DOGE: str = 'doge'
-    ETH: str = 'eth'
-    WAXP: str = 'waxp'
-    LTC: str = 'ltc'
-    XRP: str = 'xrp'
+    BTC: Final = 'btc'
+    DOGE: Final = 'doge'
+    ETH: Final = 'eth'
+    WAXP: Final = 'waxp'
+    LTC: Final = 'ltc'
+    XRP: Final = 'xrp'
     INVALID = None
 
 
 @dataclass
 class FormPeriod:
-    MIN1: str = '1min'
-    MIN5: str = '5min'
-    MIN15: str = '15min'
-    MIN30: str = '30min'
-    MIN60: str = '60min'
-    HOUR4: str = '4hour'
-    DAY1: str = '1day'
-    MON1: str = '1mon'
-    WEEK1: str = '1week'
-    YEAR1: str = '1year'
+    MIN1: Final = '1min'
+    MIN5: Final = '5min'
+    MIN15: Final = '15min'
+    MIN30: Final = '30min'
+    MIN60: Final = '60min'
+    HOUR4: Final = '4hour'
+    DAY1: Final = '1day'
+    MON1: Final = '1mon'
+    WEEK1: Final = '1week'
+    YEAR1: Final = '1year'
     INVALID = None
 
 
+@dataclass
 class FormSize:
-    MIN: int = 1
-    MAX: int = 2000
+    MIN: Final = 1
+    MAX: Final = 2000
     INVALID = None
 
 
 @dataclass
 class FormIndex:
-    CLOSE: str = 'close'
-    OPEN: str = 'open'
-    LOW: str = 'low'
-    HIGH: str = 'high'
+    CLOSE: Final = 'close'
+    OPEN: Final = 'open'
+    LOW: Final = 'low'
+    HIGH: Final = 'high'
     INVALID = None
