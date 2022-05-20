@@ -5,7 +5,7 @@ from .config import get_config
 
 class Brain(Prices):
 
-    def result(self, currency):
+    def count_currency(self, currency):
         period = get_config(FormConfig.PERIOD)
         size = get_config(FormConfig.SIZE)
         index = get_config(FormConfig.INDEX)
