@@ -6,25 +6,25 @@ import time
 
 def get_title():
     size = get_config(FormConfig.SIZE)
-    name_time = format_period()[1]
+    time_unit = format_period()[1]
     amount = format_period()[0]
 
-    if name_time == 'min':
+    if time_unit == 'min':
         seconds = amount * size * 60
 
-    elif name_time == 'hour':
+    elif time_unit == 'hour':
         seconds = amount * size * 60 * 60
 
-    elif name_time == 'day':
+    elif time_unit == 'day':
         seconds = amount * size * 24 * 60 * 60
 
-    elif name_time == 'mon':
+    elif time_unit == 'mon':
         seconds = amount * size * 30 * 24 * 60 * 60
 
-    elif name_time == 'week':
+    elif time_unit == 'week':
         seconds = amount * size * 7 * 24 * 60 * 60
 
-    elif name_time == 'year':
+    elif time_unit == 'year':
         seconds = amount * size * 365 * 24 * 60 * 60
 
     days = int((seconds / 60) / 60 // 24)
